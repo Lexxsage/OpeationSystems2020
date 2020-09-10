@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/02OS.dir/californiatime.c.o  -o 02OS 
