@@ -4,24 +4,28 @@
 
 void main()
 {
-    // Automatically called by the
-    // other time conversion functions
-    // that depend on the timezone.
-    //
+    /* 
+     * The function is auto called
+     * by other time conversion functions. 
+     * TCF depends on time zone
+     */
+    
     // tzset();
 
-    // Does not depend on the timezone.
+    // Doesn't depend on timezone
     time_t t_sec = time(NULL);
 
-    // LA timezone mathes for Californa.
+    // LA timezone
     if (putenv("TZ=:America/Los_Angeles")) {
-        // Insufficient space to allocate new environment
-        perror("Putenv returned a failure code. Aborting.");
+        // No space for new environment selection
+        perror("Putenv returned a failure code. Error.");
         return;
     }
 
-    // Man: The return value points to a
-    // statically allocated struct.
+    /*
+     * Return a time value to a
+     * statically allocated structure
+     */
     struct tm *tm_ptr = localtime(&t_sec);
 
     printf("California local time is: %s", asctime(tm_ptr));
