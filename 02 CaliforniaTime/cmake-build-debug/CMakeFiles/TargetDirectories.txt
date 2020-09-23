@@ -1,3 +1,3 @@
-/home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles/02OS.dir
+/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles/02OS.dir

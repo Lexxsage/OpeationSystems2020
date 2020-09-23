@@ -1,11 +1,4 @@
-/snap/clion/124/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/sasha/CLionProjects/02OS
--- The C compiler identification is GNU 9.3.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc - works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
+/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/sasha/CLionProjects/02OS/cmake-build-debug
+-- Build files have been written to: /home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug

@@ -1,4 +1,4 @@
-# Install script for directory: /home/sasha/CLionProjects/02OS
+# Install script for directory: /home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sasha/CLionProjects/02OS/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

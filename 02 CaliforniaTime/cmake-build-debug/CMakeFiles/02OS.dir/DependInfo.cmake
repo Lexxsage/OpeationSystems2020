@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/sasha/CLionProjects/02OS/californiatime.c" "/home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles/02OS.dir/californiatime.c.o"
+  "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/californiatime.c" "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles/02OS.dir/californiatime.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

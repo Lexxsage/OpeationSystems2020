@@ -55,19 +55,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/126/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sasha/CLionProjects/02OS
+CMAKE_SOURCE_DIR = "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sasha/CLionProjects/02OS/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -94,14 +94,14 @@ clean: CMakeFiles/02OS.dir/clean
 CMakeFiles/02OS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/02OS.dir/build.make CMakeFiles/02OS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/02OS.dir/build.make CMakeFiles/02OS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target 02OS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target 02OS"
 .PHONY : CMakeFiles/02OS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/02OS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/02OS.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sasha/CLionProjects/02OS/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sasha/Рабочий стол/OperationSystems2020/02 CaliforniaTime/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/02OS.dir/rule
 
 # Convenience name for target.
