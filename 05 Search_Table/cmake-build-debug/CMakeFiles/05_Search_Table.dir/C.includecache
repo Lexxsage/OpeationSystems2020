@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Рабочий стол/05 Search_Table/Search_Table.c
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+Search_Table.h
+/home/alex/Рабочий стол/05 Search_Table/Search_Table.h
+
+/home/alex/Рабочий стол/05 Search_Table/Search_Table.h
+sys/types.h
+-
+
+/home/alex/Рабочий стол/05 Search_Table/main.c
+stdio.h
+-
+errno.h
+-
+fcntl.h
+-
+stdlib.h
+-
+Search_Table.h
+/home/alex/Рабочий стол/05 Search_Table/Search_Table.h
+
+/home/alex/Рабочий стол/05 Search_Table/print_table_console.c
+stdio.h
+-
+stdlib.h
+-
+Search_Table.h
+/home/alex/Рабочий стол/05 Search_Table/Search_Table.h
+
