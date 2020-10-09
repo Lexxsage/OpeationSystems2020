@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/04_strlist.dir/main.c.o  -o 04_strlist 
