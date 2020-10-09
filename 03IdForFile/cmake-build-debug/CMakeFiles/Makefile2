@@ -64,16 +64,16 @@ RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/alex/Рабочий стол/OperationSystems2020/04_StrList"
+CMAKE_SOURCE_DIR = /home/alex/CLionProjects/03IdForFile
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"
+CMAKE_BINARY_DIR = /home/alex/CLionProjects/03IdForFile/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/04_strlist.dir/all
+all: CMakeFiles/03IdForFile.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/04_strlist.dir/clean
+clean: CMakeFiles/03IdForFile.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/04_strlist.dir
+# Target rules for target CMakeFiles/03IdForFile.dir
 
 # All Build rule for target.
-CMakeFiles/04_strlist.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target 04_strlist"
-.PHONY : CMakeFiles/04_strlist.dir/all
+CMakeFiles/03IdForFile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target 03IdForFile"
+.PHONY : CMakeFiles/03IdForFile.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/04_strlist.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/04_strlist.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/04_strlist.dir/rule
+CMakeFiles/03IdForFile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/03IdForFile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/03IdForFile.dir/rule
 
 # Convenience name for target.
-04_strlist: CMakeFiles/04_strlist.dir/rule
+03IdForFile: CMakeFiles/03IdForFile.dir/rule
 
-.PHONY : 04_strlist
+.PHONY : 03IdForFile
 
 # clean rule for target.
-CMakeFiles/04_strlist.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/clean
-.PHONY : CMakeFiles/04_strlist.dir/clean
+CMakeFiles/03IdForFile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/clean
+.PHONY : CMakeFiles/03IdForFile.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

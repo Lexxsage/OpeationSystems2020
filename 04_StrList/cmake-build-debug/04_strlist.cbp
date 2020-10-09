@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/alex/CLionProjects/04_strlist/cmake-build-debug"/>
+				<Option working_dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/alex/CLionProjects/04_strlist/cmake-build-debug"/>
+				<Option working_dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/alex/CLionProjects/04_strlist/cmake-build-debug"/>
+				<Option working_dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="04_strlist">
-				<Option output="/home/alex/CLionProjects/04_strlist/cmake-build-debug/04_strlist" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/alex/CLionProjects/04_strlist/cmake-build-debug"/>
+				<Option output="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/04_strlist" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -50,15 +50,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 04_strlist"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 04_strlist"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="04_strlist/fast">
-				<Option output="/home/alex/CLionProjects/04_strlist/cmake-build-debug/04_strlist" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/alex/CLionProjects/04_strlist/cmake-build-debug"/>
+				<Option output="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/04_strlist" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -69,17 +69,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 04_strlist/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/CLionProjects/04_strlist/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 04_strlist/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alex/Рабочий\ стол/OperationSystems2020/04_StrList/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/alex/CLionProjects/04_strlist/main.c">
+		<Unit filename="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/main.c">
 			<Option target="04_strlist"/>
 		</Unit>
-		<Unit filename="/home/alex/CLionProjects/04_strlist/CMakeLists.txt">
+		<Unit filename="/home/alex/Рабочий стол/OperationSystems2020/04_StrList/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

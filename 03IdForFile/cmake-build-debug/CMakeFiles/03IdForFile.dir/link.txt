@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/03IdForFile.dir/main.c.o  -o 03IdForFile 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Рабочий стол/OperationSystems2020/04_StrList
+# Install script for directory: /home/alex/CLionProjects/03IdForFile
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/CLionProjects/03IdForFile/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

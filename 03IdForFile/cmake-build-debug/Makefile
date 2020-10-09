@@ -68,10 +68,10 @@ RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/alex/Рабочий стол/OperationSystems2020/04_StrList"
+CMAKE_SOURCE_DIR = /home/alex/CLionProjects/03IdForFile
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug"
+CMAKE_BINARY_DIR = /home/alex/CLionProjects/03IdForFile/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles" "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles /home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Рабочий стол/OperationSystems2020/04_StrList/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/CLionProjects/03IdForFile/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 04_strlist
+# Target rules for targets named 03IdForFile
 
 # Build rule for target.
-04_strlist: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 04_strlist
-.PHONY : 04_strlist
+03IdForFile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 03IdForFile
+.PHONY : 03IdForFile
 
 # fast build rule for target.
-04_strlist/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/build
-.PHONY : 04_strlist/fast
+03IdForFile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/build
+.PHONY : 03IdForFile/fast
 
 main.o: main.c.o
 
@@ -149,7 +149,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -158,7 +158,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -167,7 +167,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/04_strlist.dir/build.make CMakeFiles/04_strlist.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/03IdForFile.dir/build.make CMakeFiles/03IdForFile.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -178,7 +178,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 04_strlist"
+	@echo "... 03IdForFile"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

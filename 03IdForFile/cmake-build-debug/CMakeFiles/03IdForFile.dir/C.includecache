@@ -6,15 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/CLionProjects/04_strlist/main.c
+/home/alex/CLionProjects/03IdForFile/main.c
 stdio.h
--
-string.h
 -
 stdlib.h
 -
-errno.h
--
 unistd.h
+-
+errno.h
 -
 
