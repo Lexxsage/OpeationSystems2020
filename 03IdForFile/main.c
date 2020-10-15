@@ -17,8 +17,8 @@ int main (int argc, char **argv){
 
         FILE * f1;
         f1 = fopen(argv[1], "r");
-        if (NULL == f1){ 
-perror("File not open");
+        if (NULL == f1){
+        perror("File not open");
         }
 
         fclose(f1);
