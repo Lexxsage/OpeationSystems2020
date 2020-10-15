@@ -35,5 +35,5 @@ perror("File not open");
 
         fclose(f1);
 
-        return EXIT_SUCCES
+        return EXIT_SUCCESS;
 }
