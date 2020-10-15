@@ -1,0 +1,3 @@
+OpenMe.txt -rw-------
+chmod u+s a.out !!
+a.out -rwsr-wr-w
