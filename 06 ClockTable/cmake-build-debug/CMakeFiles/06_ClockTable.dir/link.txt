@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/06_ClockTable.dir/main.c.o CMakeFiles/06_ClockTable.dir/SearchTable.c.o CMakeFiles/06_ClockTable.dir/print_table_console.c.o  -o 06_ClockTable 
