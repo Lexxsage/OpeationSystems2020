@@ -1,3 +1,0 @@
-/home/alex/Рабочий стол/OperationSystems2020/06 ClockTable/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/alex/Рабочий стол/OperationSystems2020/06 ClockTable/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/alex/Рабочий стол/OperationSystems2020/06 ClockTable/cmake-build-debug/CMakeFiles/06_ClockTable.dir
