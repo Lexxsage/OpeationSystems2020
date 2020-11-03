@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/05_Search_Table.dir/main.c.o CMakeFiles/05_Search_Table.dir/Search_Table.c.o CMakeFiles/05_Search_Table.dir/print_table_console.c.o  -o 05_Search_Table 

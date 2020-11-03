@@ -1,7 +1,0 @@
-make file :
-	 gcc -std=c99 ./*.[c,h]
-
-
-usage :
-	./a.out text.txt
-

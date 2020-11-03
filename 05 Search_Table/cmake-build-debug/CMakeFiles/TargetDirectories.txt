@@ -1,3 +1,0 @@
-/home/alex/Рабочий стол/05 Search_Table/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/alex/Рабочий стол/05 Search_Table/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/alex/Рабочий стол/05 Search_Table/cmake-build-debug/CMakeFiles/05_Search_Table.dir
