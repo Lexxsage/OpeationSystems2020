@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     int exit_code =
             print_table_console(file_descriptor, search_table, search_table_size);
 
+  
     free(search_table);
     return exit_code;
 }
