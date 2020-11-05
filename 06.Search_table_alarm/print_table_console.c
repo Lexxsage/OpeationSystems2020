@@ -1,11 +1,11 @@
 #include <stdio.h>  // perror()
 #include <stdlib.h> // EXIT_SUCCESS
-#include <signal.h> // signal(), SIGALARM
-#include <unistd.h> // alarm()
+#include <sys/time.h>
+#include <sys/types.h>
+#include <unistd.h> 
 #include "Search_Table.h"
 
 #define END_LINE_NUMBER 0
-#define SECONDS_TO_COUNT 5
 
 int is_timeout = 0;
 void on_alarm(int code)
@@ -18,21 +18,21 @@ void on_alarm(int code)
 int print_table_console(int file_descriptor, Line_Record *search_table,
                         unsigned search_table_size)
 {
-    if (signal(SIGALRM, &on_alarm) == SIG_ERR)
-    {
-        perror("Signal set error: ");
-        exit(EXIT_FAILURE);
-    }
-    if (siginterrupt(SIGALRM, 1) == -1)
-    {
-        perror("siginterrupt() Error: ");
-        exit(EXIT_FAILURE);
-    }
-    alarm(SECONDS_TO_COUNT);
-
+    fd_set rfds;
+    struct timeval tv;
+    int retval;
+    /* wait for lines number*/
     printf("Lines range: [%d, %d]\n", 1, search_table_size);
-    while (1)
+    FD_SET(0, &rfds);
+    /* Ждем не больше пяти секунд. */
+    tv.tv_sec = 5;
+    tv.tv_usec = 0;
+    retval = select(1, &rfds, NULL, NULL, &tv);
+    /* Не полагаемся на значение tv! */
+    if (retval)
     {
+      while (1)
+      {
         int line_number, scanf_result;
         char ending;
         printf("$ ");
@@ -71,6 +71,15 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
         print_line(file_descriptor, search_table[line_number]);
         putchar('\n');
     }
-
+    
     return EXIT_SUCCESS;
+    }
+    
+    else
+        printf("Данные не появились в течение пяти секунд.\n");
+    return 0;
+	
+	
+
+   
 }
