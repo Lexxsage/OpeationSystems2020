@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
 
   
     free(search_table);
-    //close
+    close(search_table);
     return exit_code;
 }
