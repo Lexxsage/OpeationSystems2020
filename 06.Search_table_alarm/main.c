@@ -23,14 +23,17 @@ int main(int argc, char *argv[])
     if (file_descriptor == -1)
     {
         perror(argv[0]);
+        free(search_table);
         return EIO;
     }
-
+//if error
     int search_table_size =
             build_search_table(file_descriptor, search_table, LINES_COUNT_MAX);
     int exit_code =
             print_table_console(file_descriptor, search_table, search_table_size);
 
+  
     free(search_table);
+    close(file_descriptor);
     return exit_code;
 }
