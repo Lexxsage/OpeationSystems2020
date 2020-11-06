@@ -31,11 +31,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c032fee3-f1f4-4dd4-ba8c-022994d7d36a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5task.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search_Table.c" beforeDir="false" afterPath="$PROJECT_DIR$/Search_Table.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search_Table.h" beforeDir="false" afterPath="$PROJECT_DIR$/Search_Table.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06.Search_table_alarm/Search_Table.c" beforeDir="false" afterPath="$PROJECT_DIR$/../06.Search_table_alarm/Search_Table.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06.Search_table_alarm/Search_Table.h" beforeDir="false" afterPath="$PROJECT_DIR$/../06.Search_table_alarm/Search_Table.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06.Search_table_alarm/print_table_console.c" beforeDir="false" afterPath="$PROJECT_DIR$/../06.Search_table_alarm/print_table_console.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07 Search_table_mmap/Search_Table.h" beforeDir="false" afterPath="$PROJECT_DIR$/../07 Search_table_mmap/Search_Table.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../06.Search_table_alarm" />
   </component>
   <component name="RunManager" selected="CMake Application.main">
     <configuration name="05_Search_Table" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="05_Search_Table" TARGET_NAME="05_Search_Table" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="05_Search_Table" RUN_TARGET_NAME="05_Search_Table">
@@ -69,11 +71,6 @@
     <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="05_Search_Table" TARGET_NAME="05_Search_Table" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="05_Search_Table" RUN_TARGET_NAME="05_Search_Table">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -96,6 +93,7 @@
       <workItem from="1604402849137" duration="27000" />
       <workItem from="1604402877362" duration="13000" />
       <workItem from="1604402899666" duration="194000" />
+      <workItem from="1604634519599" duration="3807000" />
     </task>
     <servers />
   </component>
@@ -119,10 +117,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602143340483" />
-    <state x="397" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604402868491">
+    <state x="397" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604634526102">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="397" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1604402868491" />
+    <state x="397" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1604634526102" />
     <state width="872" height="340" key="GridCell.Tab.0.bottom" timestamp="1602143346239">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

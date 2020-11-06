@@ -21,13 +21,14 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
     fd_set rfds;
     struct timeval tv;
     int retval;
+    int max_fd = 0;
     /* wait for lines number*/
     printf("Lines range: [%d, %d]\n", 1, search_table_size);
     FD_SET(0, &rfds);
     /* Ждем не больше пяти секунд. */
     tv.tv_sec = 5;
     tv.tv_usec = 0;
-    retval = select(1, &rfds, NULL, NULL, &tv);
+    retval = select(max_fd + 1, &rfds, NULL, NULL, &tv);
     /* Не полагаемся на значение tv! */
     if (retval)
     {
@@ -71,10 +72,8 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
         print_line(file_descriptor, search_table[line_number]);
         putchar('\n');
     }
-    
     return EXIT_SUCCESS;
     }
-    
     else
         printf("Данные не появились в течение пяти секунд.\n");
     return 0;

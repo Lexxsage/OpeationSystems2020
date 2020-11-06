@@ -1,6 +1,7 @@
 #include <unistd.h> // lseek
 #include <stdio.h>  // perror
 #include <stdlib.h> // exit
+#include <errno.h>
 #include "Search_Table.h"
 
 #define BUFFER_SIZE 200
@@ -24,8 +25,13 @@ int build_search_table(int file_descriptor, Line_Record *search_table, unsigned 
         }
         if (read_result == -1)
         {
-            perror("read() Error: ");
-            exit(EXIT_FAILURE);
+            if (errno == EINTR || errno == EAGAIN ){
+                continue;
+            }
+            else{
+                perror("read() Error: ");
+                return -1;
+            }
         }
 
         for (unsigned i = 0; i < read_result; i++)
