@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         return EIO;
     }
 
-    if (build_search_table = -1){
+    if (build_search_table == -1){
         free(search_table);
         close(file_descriptor);
         exit(EXIT_FAILURE);
