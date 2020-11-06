@@ -30,6 +30,14 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
     tv.tv_usec = 0;
     retval = select(max_fd + 1, &rfds, NULL, NULL, &tv);
     /* Не полагаемся на значение tv! */
+    if (retval  == -1) {
+        if (errno == EINTR || errno == EAGAIN)  {
+            continue;
+        }
+        else {
+            perror("select()");
+            if(close(fd) == -1) perror("Error while closing");
+            return -1;
     if (retval)
     {
       while (1)
@@ -77,8 +85,4 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
     else
         printf("Данные не появились в течение пяти секунд.\n");
     return 0;
-	
-	
-
-   
 }
