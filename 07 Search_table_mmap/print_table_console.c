@@ -45,7 +45,6 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
 
     if (retval>0)
     {
-        if (FD_ISSET(file_descriptor, &rfds) != 0) {
             while (1)
             {
                 int line_number, scanf_result;
@@ -87,7 +86,6 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
                 putchar('\n');
             }
             return EXIT_SUCCESS;
-        }
     }
     return 0;
 }
