@@ -24,7 +24,7 @@ char *map_whole_file(int file_descriptor, off_t file_size)
     if (file_map == MAP_FAILED)
     {
         perror("mmap() Error: ");
-        exit(EXIT_FAILURE);
+        return -2;
     }
 
     return file_map;
@@ -56,7 +56,7 @@ int build_search_table(int file_descriptor, Line_Record *search_table, unsigned 
     if (munmap(file_map, file_size) == -1)
     {
         perror("mmap() Error:");
-        exit(EXIT_FAILURE);
+        return -1;
     }
 
     return current_line;
@@ -75,6 +75,6 @@ void print_line(int file_descriptor, Line_Record line_record)
     if (file_map == MAP_FAILED)
     {
         perror("mmap() Error: ");
-        exit(EXIT_FAILURE);
+        return -2;
     }
 }
