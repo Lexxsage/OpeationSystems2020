@@ -45,7 +45,7 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
 
     if (retval>0)
     {
-        if (FD_ISSET(fd, &terminal) != 0) {
+        if (FD_ISSET(file_descriptor, &rfds) != 0) {
             while (1)
             {
                 int line_number, scanf_result;
