@@ -56,28 +56,23 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
                 // User entered line number faster than SECOND_TO_COUNT.
                 // So alarm counting must to be stoped.
                 alarm(0);
-                if (is_timeout)
-                {
-                    for (unsigned i = 0; i < search_table_size + 1; i++)
-                    {
+                if (is_timeout) {
+                    for (unsigned i = 0; i < search_table_size + 1; i++) {
                         print_line(file_descriptor, search_table[i]);
                         putchar('\n');
                     }
                     exit(EXIT_SUCCESS);
                 }
 
-                if (scanf_result != 2 || ending != '\n')
-                {
+                if (scanf_result != 2 || ending != '\n') {
                     fprintf(stderr, "Format Error\n");
                     return EXIT_FAILURE;
                 }
 
-                if (line_number == END_LINE_NUMBER)
-                {
+                if (line_number == END_LINE_NUMBER) {
                     break;
                 }
-                if (line_number < 0 || line_number > search_table_size)
-                {
+                if (line_number < 0 || line_number > search_table_size) {
                     fprintf(stderr, "Out Of Range Error: line_number %d out of range [%d, %d]\n",
                             line_number, 1, search_table_size);
                     continue;
@@ -86,7 +81,8 @@ int print_table_console(int file_descriptor, Line_Record *search_table,
                 print_line(file_descriptor, search_table[line_number]);
                 putchar('\n');
             }
-            return EXIT_SUCCESS;
+        }else {
+            printf("fd absent in fd_set");
         }
     }
     return 0;
