@@ -12,7 +12,7 @@ off_t get_file_size(int file_descriptor)
     {
         {
             perror("fstat() Error: ");
-            exit(EXIT_FAILURE);
+            return -1;
         }
     }
     return file_stat.st_size;
@@ -53,12 +53,12 @@ int build_search_table(int file_descriptor, Line_Record *search_table, unsigned 
     }
 
     search_table[current_line].length = current_line_position;
+    munmap(file_map, file_size);
     if (munmap(file_map, file_size) == -1)
     {
         perror("mmap() Error:");
         return -1;
     }
-
     return current_line;
 }
 
