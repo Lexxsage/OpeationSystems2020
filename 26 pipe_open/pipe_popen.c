@@ -25,7 +25,7 @@ void close_pipe(FILE *pipe)
 
 int main(int argc, char *argv[])
 {
-    // ============= Opening pipe. ======================================================
+    // Opening pipe
     FILE *pipe = popen(COMMAND_TO_WRITE_TEXT, "r");
     if (pipe == NULL)
     {
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
    
-    // ========= Reading from stdout of writing process. ================================
+    // Reading from stdout of writing process
     char buf[BUFSIZ];
     int bytes_read = fread(buf, 1, BUFSIZ, pipe);
     if (bytes_read == -1)
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
    
     close_pipe(pipe);
 
-    // ========= Converting to upper, writing into stdout. ==============================
+    // Converting to upper, writing into stdout
     unsigned i;
     for (i = 0; i < bytes_read; i++)
     {

@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         close(pipe_ends[1]);
         return EXIT_FAILURE;
     }
-    // ====== Parent process. ===========================================================
+    // Parent process
     else if (pid > 0)
     {
         close(pipe_ends[0]);
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
         close(pipe_ends[1]);
     }
    
-    // ====== Child process. ============================================================
+    // Child process
     else if (pid == 0)
     {
         close(pipe_ends[1]);

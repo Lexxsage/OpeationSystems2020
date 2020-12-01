@@ -28,14 +28,14 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    // ============= Building command. ==================================================
+    // Building command
     char cmd[256];
     cmd[0] = '\0';
     strcat(cmd, "grep -r ^$ ");
     strcat(cmd, argv[1]);
     strcat(cmd, " | wc -l");
    
-    // ============= Opening pipe. ======================================================
+    // Opening pipe
     FILE *pipe = popen(cmd, "r");
     if (pipe == NULL)
     {
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
    
-    // ========= Obtaining, printing result. ============================================
+    // Obtaining, printing result
     unsigned result;
     if (EOF == fscanf(pipe, "%ul", &result))
     {
