@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-    // ====== Opening terminal. =========================================================
+    //Opening terminal
     int terminal_fd = open("/dev/tty", O_RDWR);
     if (terminal_fd == -1)
     {
@@ -22,9 +22,8 @@ int main(int argc, char **argv)
         perror("'/dev/tty' is not terminal: ");
         return EXIT_FAILURE;
     }
-    // ----------------------------------------------------------------------------------
 
-    // ====== Changing terminal attr. ===================================================
+    // Changing terminal attr
     struct termios old_terminal_attr, new_terminal_attr;
     if (tcgetattr(terminal_fd, &old_terminal_attr) == -1)
     {
@@ -33,8 +32,8 @@ int main(int argc, char **argv)
     }
     new_terminal_attr = old_terminal_attr;
 
-    // Canon mode - append user input by lines.
-    // Not canon mode - append user input by groups of 'VMIN' symbols.
+    // Canon mode - append user input by lines
+    // Not canon mode - append user input by groups of 'VMIN' symbols
     new_terminal_attr.c_lflag &= ~ICANON;
     new_terminal_attr.c_cc[VMIN] = 1;
 
@@ -43,9 +42,8 @@ int main(int argc, char **argv)
         perror("tcsetattr");
         return EXIT_FAILURE;
     }
-    // ----------------------------------------------------------------------------------
 
-    // ====== Asking confirmation and handling it. ======================================
+    // Asking confirmation and handling it
     char *message = "Confirm? [Y/n] ";
     if (write(STDOUT_FILENO, message, strlen(message)) == -1)
     {
@@ -73,7 +71,6 @@ int main(int argc, char **argv)
         printf("\nUndefined answer\n");
         break;
     }
-    // ----------------------------------------------------------------------------------
 
     tcsetattr(terminal_fd, TCSANOW, &old_terminal_attr);
     return EXIT_SUCCESS;
