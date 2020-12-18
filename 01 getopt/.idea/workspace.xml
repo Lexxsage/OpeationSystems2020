@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6665cc51-244c-4843-a40a-d8b71c83ad58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../16 ask_confirmation/16.c" beforeDir="false" afterPath="$PROJECT_DIR$/../16 ask_confirmation/16.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../17 str_editor/Makefile" beforeDir="false" />
-    </list>
+    <list default="true" id="6665cc51-244c-4843-a40a-d8b71c83ad58" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608263937079</updated>
-      <workItem from="1608263938621" duration="403000" />
+      <workItem from="1608263938621" duration="653000" />
     </task>
     <servers />
   </component>
