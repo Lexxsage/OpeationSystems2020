@@ -20,6 +20,7 @@ int main(int argc, char **argv)
     if (!isatty(terminal_fd))
     {
         perror("'/dev/tty' is not terminal: ");
+        //close tfd
         return EXIT_FAILURE;
     }
 

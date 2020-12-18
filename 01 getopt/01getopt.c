@@ -147,5 +147,6 @@ int execute_command(char *command)
         }
         return 0;
     }
+    
     return 1;
 }
