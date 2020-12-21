@@ -9,240 +9,82 @@
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
+#define SIZEMESS 256
+typedef struct {
+    long mtype;
+    char mtext[SIZEMESS];
+} message;
+	
+ 
+int main(int ac,char **av)
+{
 
-#include "header.h"
+    int msgid;
+    int rtn = 0;
+    int readCount = 0 ;
+    int count = 2;
+    char buf[SIZEMESS];
+    struct timeval tv;
+    int retval;
 
-int closeQueue(int queue) {
-    if(msgctl(queue,IPC_RMID,NULL) == ERROR) {
-        perror("Can't close queue");
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
-
-size_t msgLength(char *msg) {
-    size_t length = strlen(msg);
-    if(msg[length - 1] == '\n') {
-        msg[length - 1] = '\0';
-    } else {
-        ++length;
-    }
-
-    return length;
-}
-
-struct array * initArray() {
-    struct array *res = calloc(1, sizeof(struct array));
-    if(res == NULL) {
-        perror("Can't init array");
-        return NULL;
-    }
-
-    return res;
-}
-
-int pushBack(struct array *arr, pid_t item) {
-    if(arr->indexForAdd < arr->size) {
-        arr->arr[arr->indexForAdd] = item;
-        ++arr->indexForAdd;
-        return EXIT_SUCCESS;
-    }
-
-    pid_t *tmp = (pid_t *)realloc(arr->arr, arr->size + ARRAY_RATIO_SIZE);
-    if(tmp == NULL) {
-        perror("Can't add new element");
-        return EXIT_FAILURE;
-    }
-
-    arr->size += ARRAY_RATIO_SIZE;
-    arr->arr = tmp;
-    arr->arr[arr->indexForAdd] = item;
-    ++arr->indexForAdd;
-    return EXIT_SUCCESS;
-}
-
-int find(struct array *arr, pid_t item) {
+    message rcvbuf,sndbuf;
+    int fd;
     int i;
-    for(i = 0; i < arr->indexForAdd; ++i) {
-        if(arr->arr[i] == item) {
-            return i;
-        }
+    int countMesg = 0;
+
+    fd = open("/dev/tty", O_RDWR);
+    if( -1 ==(msgid =msgget(getuid(),IPC_CREAT|0660)))
+    {
+	perror("msgget");
+        return -1;
     }
 
-    return ERROR;
+    while(1)
+    {
+	fd_set set;
+        struct timeval tv;tv.tv_sec = 0;tv.tv_usec = 50;
+        FD_ZERO(&set);
+        FD_SET(1,&set);
+        select(2,&set,NULL,NULL,&tv);
+    	
+	rtn=msgrcv(msgid,&rcvbuf,SIZEMESS,1,IPC_NOWAIT);
+        
+	if(rtn != -1)
+	{
+	    if(!strcmp(rcvbuf.mtext,"new"))
+	    {
+	        count++;
+	        sndbuf.mtext[0] = count;
+		sndbuf.mtype = 2; 
+		msgsnd ( msgid, &sndbuf, 2, 0);
+	    }
+	}
+
+        if(FD_ISSET(1,&set))
+	{
+	    if(!(readCount = read(fd,buf,SIZEMESS)))
+	    {
+		strcpy(sndbuf.mtext, "end");
+	        for( i = 3; i <= count; i++)
+		{
+    		    sndbuf.mtype = i ;
+		    msgsnd ( msgid, &sndbuf, 4, 0);
+	        }
+		break;	    
+	    } 
+	    else
+	    {
+		strcpy(sndbuf.mtext, buf);
+	        countMesg++;
+		for( i = 3; i <= count; i++)
+		{
+		    sndbuf.mtype = i ;	
+		    msgsnd ( msgid, &sndbuf, readCount + 1, 0);
+	        }
+	    }
+	}
+    }
+    msgctl(msgid, IPC_RMID, 0);
+    close(fd);
+    return 0;
 }
-
-int removeItem(struct array *arr, int index) {
-    if(index < 0 || index >= arr->indexForAdd) {
-        return EXIT_FAILURE;
-    }
-
-    int i;
-    for(i = index + 1; i < arr->indexForAdd; ++i) {
-        arr->arr[i - 1] = arr->arr[i];
-    }
-    --arr->indexForAdd;
-
-    return EXIT_SUCCESS;
-}
-
-void destroyArray(struct array *arr) {
-    free(arr->arr);
-    free(arr);
-}
-
-int isEmpty(struct array *arr) {
-    return arr->indexForAdd <= 0;
-}
-
-int addListeners(int queue, struct array *pids) {
-    struct message buf;
-
-    while(msgrcv(queue, &buf, sizeof(pid_t), MSG_TYPE_REG, IPC_NOWAIT) != ERROR) {
-        if(pushBack(pids, buf.pid) != EXIT_SUCCESS) {
-            return EXIT_FAILURE;
-        }
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int delListeners(int queue, struct array *pids) {
-    struct message buf;
-
-    while(msgrcv(queue, &buf, sizeof(pid_t), MSG_TYPE_END, IPC_NOWAIT) != ERROR) {
-        int index = find(pids, buf.pid);
-        if(index == ERROR) {
-            fprintf(stderr, "Del listener, which doesn't exits\n");
-            return EXIT_FAILURE;
-        }
-
-        if(removeItem(pids, index) != EXIT_SUCCESS) {
-            return EXIT_FAILURE;
-        }
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int updListeners(int queue, struct array *pids) {
-    if(addListeners(queue, pids) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
-    }
-
-    if(delListeners(queue, pids) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int sendMessage(int queue, struct array *pids, struct message *buf, size_t length) {
-    int i;
-    for(i = 0; i < pids->indexForAdd; ++i) {
-        buf->mtype = pids->arr[i];
-        if(msgsnd(queue, buf, length + sizeof(pid_t), NO_FLAGS) == ERROR) {
-            perror("Can't send message");
-            return EXIT_FAILURE;
-        }
-    }
-
-    printf("Message was sent to %d listener(s)\n", i);
-
-    return EXIT_SUCCESS;
-}
-
-int sendMessages(int queue, struct array *pids) {
-    printf("Enter messages (max length - %d symbols, Ctrl+D - for exit):\n", SIZE_MSG - 1);
-    //because we need place for '\0' in the end of message
-
-    struct message buf;
-    int isWork = TRUE;
-    do {
-        size_t length;
-        if(fgets(buf.mtext, SIZE_MSG, stdin) == NULL) {
-            length = 0;
-        } else {
-            length = msgLength(buf.mtext);
-        }
-
-        if(updListeners(queue, pids) != EXIT_SUCCESS) {
-            return EXIT_FAILURE;
-        }
-
-        if(!length) {
-            isWork = FALSE;
-        }
-
-        if(sendMessage(queue, pids, &buf, length) != EXIT_SUCCESS) {
-            return EXIT_FAILURE;
-        }
-
-    } while(isWork);
-
-    return EXIT_SUCCESS;
-}
-
-int waitAnswers(int queue, struct array *pids) {
-    struct message buf;
-
-    while(!isEmpty(pids)) {
-        if(msgrcv(queue, &buf, sizeof(pid_t), MSG_TYPE_END_ANSWER, NO_FLAGS) == ERROR) {
-            perror("Can't get answer from listeners");
-            return EXIT_FAILURE;
-        }
-
-        int index = find(pids, buf.pid);
-        if(index == ERROR) {
-            fprintf(stderr, "Del listener, which doesn't exits\n");
-            return EXIT_FAILURE;
-        }
-
-        if(removeItem(pids, index) != EXIT_SUCCESS) {
-            return EXIT_FAILURE;
-        }
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int main() {
-    key_t queueKey = ftok("send.c", PROJECT_PREFIX);
-    if(queueKey == ERROR) {
-        perror("Can't generate key for queue");
-        return EXIT_FAILURE;
-    }
-
-    int queue;
-    queue = msgget(queueKey, IPC_CREAT | QUEUE_RIGHTS);
-    if(queue == ERROR)     {
-        perror("Can't make queue");
-        return EXIT_FAILURE;
-    }
-
-    printf("Queue was created\n");
-
-    struct array *pids = initArray();
-
-    if(sendMessages(queue, pids) != EXIT_SUCCESS) {
-        closeQueue(queue);
-        destroyArray(pids);
-        return EXIT_FAILURE;
-    }
-
-    if(waitAnswers(queue, pids) != EXIT_SUCCESS) {
-        closeQueue(queue);
-        destroyArray(pids);
-        return EXIT_FAILURE;
-    }
-
-    if(closeQueue(queue) != EXIT_SUCCESS) {
-        destroyArray(pids);
-        return EXIT_FAILURE;
-    }
-
-    destroyArray(pids);
-    return EXIT_SUCCESS;
-}
-

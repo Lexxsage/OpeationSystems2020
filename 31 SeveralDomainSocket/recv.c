@@ -5,85 +5,52 @@
 #include <stdlib.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
+#define SIZEMESS 256
+typedef struct {
+    long mtype;
+    char mtext[SIZEMESS];
+} message;
 
-#include "header.h"
+int main(int ac, char **av){
 
-int regInQueue(int queue) {
-    pid_t pid = getpid();
-    struct message buf = {MSG_TYPE_REG, pid, ""};
+    message rcvbuf;
+    int msgtype = 0 ;
+    int msgid;  
+    int rtn;
 
-    if(msgsnd(queue, &buf, sizeof(pid_t), NO_FLAGS) == ERROR) {
-        perror("Can't register in queue");
-        return EXIT_FAILURE;
+    if(-1 == (msgid = msgget(getuid(),IPC_EXCL)))
+    {
+	perror("msgget");
+	exit(2);
     }
 
-    return EXIT_SUCCESS;
+    strcpy(rcvbuf.mtext,"new");
+    rcvbuf.mtype = 1;
+
+    if(-1 == msgsnd ( msgid, &rcvbuf, 4, 0))
+    {
+	perror("msgsend");
+        exit(1);
+    }
+				    
+    msgrcv(msgid,&rcvbuf,SIZEMESS,2,0);
+    msgtype =(int) (rcvbuf.mtext[0]);
+
+    while(rtn=msgrcv(msgid,&rcvbuf,SIZEMESS,msgtype,0))
+    {
+	rcvbuf.mtext[rtn - 1] = '\0';
+        if ( rtn == -1 ) 
+	{
+	    msgctl(msgid, IPC_RMID, 0);
+	    break;	
+	}
+	else 
+	{
+	    if(!strcmp(rcvbuf.mtext,"quit"))
+		exit(1);
+    	}
+        printf("Program %s(%d): %s",av[0],getpid(),rcvbuf.mtext);
+    }
+    return 0;
 }
-
-int getMessages(int queue, char *argv0) {
-    struct message msg;
-    ssize_t code;
-    pid_t pid = getpid();
-    while((code = msgrcv(queue, &msg, SIZE_MSG + sizeof(pid_t), pid, NO_FLAGS)) >= 0) {
-        if(code == sizeof(pid_t)) { //if message is empty
-            break;
-        }
-
-        printf("%s, msg: %s\n", argv0, msg.mtext);
-    }
-
-    if(code == ERROR) {
-        perror("Can't get message");
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int leaveQueue(int queue) {
-    pid_t pid = getpid();
-    struct message buf = {MSG_TYPE_END_ANSWER, pid, ""};
-
-    if(msgsnd(queue, &buf, sizeof(pid_t), NO_FLAGS) == ERROR) {
-        perror("Can't send message");
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
-
-int main(int argc, char **argv) {
-    if(argc < 1) {
-        fprintf(stderr, "Bad args\n");
-        return EXIT_FAILURE;
-    }
-
-    key_t queueKey = ftok("send.c", PROJECT_PREFIX);
-    if(queueKey == ERROR) {
-        perror("Can't generate key for queue");
-        return EXIT_FAILURE;
-    }
-
-    int queue;
-    queue = msgget(queueKey, NO_FLAGS);
-    if(queue == ERROR) {
-        perror("Can't get queue");
-        return EXIT_FAILURE;
-    }
-
-    if(regInQueue(queue) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
-    }
-
-    if(getMessages(queue, argv[0]) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
-    }
-
-    if(leaveQueue(queue) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
-
 
