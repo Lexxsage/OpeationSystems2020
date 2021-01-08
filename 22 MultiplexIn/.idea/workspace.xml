@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f517275c-3f66-408c-a115-8070e7b04182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../30 UnixDomainSocket/client.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../30 UnixDomainSocket/server.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../18 DirListing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../18 DirListing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../18 DirListing/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/../18 DirListing/header.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../19 FileNamePattern/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../19 FileNamePattern/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30 UnixDomainSocket/recv.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30 UnixDomainSocket/send.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m.c" beforeDir="false" afterPath="$PROJECT_DIR$/m.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609150813284</updated>
       <workItem from="1609150814581" duration="376000" />
+      <workItem from="1610121011498" duration="150000" />
     </task>
     <servers />
   </component>
@@ -64,5 +59,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
